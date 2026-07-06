@@ -416,23 +416,23 @@ const sections = [
 const tiers = [
   {
     min: 0.8,
-    tagline: "Strong Foundation — Focus on Optimization and Scaling!",
-    pitch: "Your organization has a strong foundation in place. The next step is optimizing and scaling what's working. Reach out to Due East Partners for a free consultation on how to sustain your momentum and maximize impact. <a href='mailto:contact@dueeastpartners.com'>Email us</a> or visit <a href='https://dueeastpartners.com' target='_blank'>dueeastpartners.com</a>."
+    tagline: "Strong Foundation",
+    pitch: "Your organization has built a strong foundation by implementing many nonprofit best practices that support long-term success. You are well positioned to optimize and scale what works, strengthen your long-term sustainability, and expand your impact.<br><br>Schedule a complimentary consultation with <a href='https://dueeastpartners.com' target='_blank'>Due East Partners</a> to discuss your results, explore opportunities, and plan your next steps."
   },
   {
     min: 0.6,
-    tagline: "Good Progress — A Few Key Areas Need Attention!",
-    pitch: "You've made good progress, with several key areas ready for focused attention. Reach out to Due East Partners for a free consultation on what to prioritize next. <a href='mailto:contact@dueeastpartners.com'>Email us</a> or visit <a href='https://dueeastpartners.com' target='_blank'>dueeastpartners.com</a>."
+    tagline: "Building Momentum",
+    pitch: "Your organization has many strengths and is making meaningful progress in adopting nonprofit best practices. You're well positioned to focus on a few key areas, such as strengthening your vision, leadership, stakeholder engagement, communications, or organizational capacity, to further strengthen your foundation and position your organization for greater impact.<br><br>Schedule a complimentary consultation with <a href='https://dueeastpartners.com' target='_blank'>Due East Partners</a> to discuss your results, prioritize opportunities, and plan your next steps."
   },
   {
     min: 0.4,
-    tagline: "Developing — Significant Gaps to Address!",
-    pitch: "Your organization is developing, with meaningful gaps to address to strengthen your foundation. Connect with Due East Partners for a free consultation tailored to where you are today and how to build from here. <a href='mailto:contact@dueeastpartners.com'>Email us</a> or visit <a href='https://dueeastpartners.com' target='_blank'>dueeastpartners.com</a>."
+    tagline: "Building Capacity",
+    pitch: "Your organization has important building blocks in place, with opportunities to strengthen the best practices, systems, and strategies that support a clear vision, strong leadership, meaningful stakeholder engagement, effective communications, and long-term organizational capacity. Developing a focused approach now will create lasting benefits.<br><br>Schedule a complimentary consultation with <a href='https://dueeastpartners.com' target='_blank'>Due East Partners</a> to discuss your results, prioritize opportunities, and plan your next steps."
   },
   {
     min: 0,
-    tagline: "Early Stage — Foundational Work Is the Priority!",
-    pitch: "Every strong organization starts here. The priority now is foundational work, and the best time to get support is today. Connect with Due East Partners for a free consultation on how to lay a solid foundation for growth and sustainability. <a href='mailto:contact@dueeastpartners.com'>Email us</a> or visit <a href='https://dueeastpartners.com' target='_blank'>dueeastpartners.com</a>."
+    tagline: "Establishing the Foundation",
+    pitch: "Every strong organization begins by building a solid foundation. Prioritizing core nonprofit best practices, including a clear vision, strong leadership, meaningful stakeholder engagement, effective communications, and the organizational capacity to sustain your work, will support long-term growth and resilience.<br><br>Schedule a complimentary consultation with <a href='https://dueeastpartners.com' target='_blank'>Due East Partners</a> to discuss your results, identify priorities, and plan your next steps."
   }
 ];
 
@@ -600,7 +600,7 @@ function downloadPDF() {
   const taglineLines = doc.splitTextToSize(tier.tagline, 530);
   doc.text(taglineLines, 40, 175);
 
-  const pitchText = tier.pitch.replace(/<[^>]+>/g, '');
+  const pitchText = tier.pitch.replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
   doc.setTextColor(88, 88, 91);
   doc.setFontSize(10); doc.setFont('helvetica', 'normal');
   const pitchLines = doc.splitTextToSize(pitchText, 520);
